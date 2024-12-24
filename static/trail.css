@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+
+.gallerydiv {
+    background-color: #f8f8f8;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-gap: 15px;
+    grid-auto-rows: minmax(400px, auto);
+    grid-auto-columns: minmax(400px, auto);
+    padding: 10px;
+
+}
+
+.items {
+    background: rgba(255, 255, 255, 0.902);
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 3px 3px 3px 1px rgb(178, 159, 159);
+    text-align: center;
+    
+}
+
+
+
+.items img{
+    height: 300px;
+    padding-top: 10px;
+    margin-right: 10px;
+    width:90%;
+    margin-left: 5%;
+   
+    
+}
+.pcarddiscount{
+    z-index: 990;
+    height: 20px;
+    width: 35px;
+    border-radius: 3px;
+    background-color: #111E49;
+    color:white;
+    position: absolute;
+    right: 20px;
+    top:20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.pcarddetails{
+    margin-top: 10px;
+}
+.pcardoldprice{
+   
+    text-decoration: line-through;
+}
+.stars{
+    color:gold;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+  
+
+
+
+
+
+
+
+

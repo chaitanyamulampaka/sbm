@@ -1,0 +1,161 @@
+{% load static %}
+
+{% include "header.html" %}
+    <link rel="stylesheet" href="{% static 'productViewer.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <div class="whole">
+        <div class="lftpart">
+            <div class="viewerdiv">
+     
+                <div class="smallimgcont">
+                    <div class="imgviewbox1 imgbox"><img id="imgviewbox1" src="{{productViewerdata.smallimg1.url}}"></div>
+                    <div class="imgviewbox2 imgbox"><img id="imgviewbox2" src="{{productViewerdata.smallimg2.url}}"></div>
+                    <div class="imgviewbox3 imgbox"><img id="imgviewbox3" src="{{productViewerdata.smallimg3.url}}"></div>
+                    <div class="imgviewbox4 imgbox"><img id="imgviewbox4" src="{{productViewerdata.smallimg4.url}}"></div>
+                </div>
+                <div class="mainimgviewer"><img id="mainimgviewer" src="{{productViewerdata.mainimg.url}}"></div>
+               
+            </div>
+            <div class="addtobagdiv">
+                <div class="addtobagbtndiv">
+                    
+                    <button class="addtobagbtn"><i class="fa-solid fa-bag-shopping"></i>&nbsp;&nbsp;ADD TO BAG</button></div>
+                
+                <div class="buynowbtndiv"><button class="buynow">BUY NOW</button></div>
+                
+            </div>
+        </div>   
+       
+        <div class="specificationpart">
+            
+            <h2 id="product-title">{{pcardsdata.pcardcost}}</h2>
+            <h4 id="product-description">
+                {{productViewerdata.productdescription}}</h4>
+        </br>
+            <h4 id="specprice">Special price</h4>
+            
+            <div class="price">
+                <h1 style="font-weight: lighter;">&#x20B9;{{pcardsdata.pcardcost}}&nbsp;&nbsp;</h1>
+                <span id="cutprice">
+                    <h4 style="font-weight: lighter;">&#x20B9;{{pcardsdata.pcardoldprice}}</h4>
+                
+                    
+                </span>
+                <span id="discount"><h4>&nbsp;&nbsp;{{pcardsdata.pcarddiscount}}% off</h4></span>
+            </div>
+            <div class="pincodediv">
+                <i class="fa-solid fa-location-dot locationicon"></i>
+                <input type="number" placeholder="Pincode" id="pincodeinput">
+                <button class="checkbtn">Check</button>
+          
+                <span class="errorpin">Wrong Pincode</span>
+                <span id="delivery_date" >Delivery in 2 days   <i class="fa-solid fa-circle-check"></i></i></span>
+            </div>
+            <div class="artistname"><i class="fa-solid fa-palette"></i>  SBM</div>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Specifications</th>
+                  
+                </tr>
+              
+                    <td colspan="3"><hr></td>
+                  
+              </thead>
+            
+              <tbody>
+                <tr>
+                
+                  <td>John Doe :</td>
+                  
+                  <td>30</td>
+                  
+                </tr>
+                <tr>
+                    <td colspan="3"><hr></td>
+                  </tr>
+                <tr>
+                  <td>Jane Smith</td>
+                  <td>25</td>
+                  
+                </tr>
+                <tr>
+                    <td colspan="10"><hr></td>
+                  </tr>
+                <tr>
+                  <td>Alice Johnson</td>
+                  <td>35</td>
+                 
+                </tr>
+              </tbody>
+              
+            </table>
+    </div>
+
+    <script>
+        
+
+        const mainimgviewer = document.querySelector('.mainimgviewer');
+        const imgBoxes = document.querySelectorAll('.imgbox');
+    
+var imgElement1 = document.querySelector('#imgviewbox1'); 
+var imgElement2 = document.querySelector('#imgviewbox2');
+var imgElement3 = document.querySelector('#imgviewbox3');
+var imgElement4 = document.querySelector('#imgviewbox4');
+var mainimgviewer1 = document.querySelector('#mainimgviewer');
+var smallsrc1 = imgElement1.src;
+var smallsrc2 = imgElement2.src;
+var smallsrc3 = imgElement3.src;
+var smallsrc4 = imgElement4.src;
+var mainimgsrc = mainimgviewer1.src;
+
+       
+
+
+       
+        
+
+        imgBoxes.forEach((imgBox, index) => {
+            imgBox.addEventListener('mouseenter', () => {
+                switch (index) {
+                    case 0:
+                        mainimgviewer.innerHTML = `<img src="${smallsrc1}">`;
+                      
+                        break;
+                    case 1:
+                        mainimgviewer.innerHTML = `<img src="${smallsrc2}">`;
+                        break;
+                    case 2:
+                        mainimgviewer.innerHTML = `<img src="${smallsrc3}">`;
+                        break;
+                    case 3:
+                        mainimgviewer.innerHTML = `<img src="${smallsrc4}">`;
+                        break;
+                    default:
+                        mainimgviewer.innerHTML = `<img src="${mainimgsrc}">`;
+                }
+            });
+        });
+        mainimgviewer.addEventListener('mouseleave', () => {
+            mainimgviewer.innerHTML = `<img src="${mainimgsrc}">`;
+        });
+
+        var pincodeinput=document.querySelector('#pincodeinput');
+        var errorpin=document.querySelector('.errorpin');
+            pincodeinput.addEventListener('input',()=>{
+                if(pincodeinput.value.length>6){
+                    errorpin.style.display='block';
+                    pincodeinput.style.borderBottom='solid 2px red';
+                }
+                else{
+                    errorpin.style.display='none';
+                    pincodeinput.style.borderBottom='solid 2px rgb(251, 255, 0)';
+                }
+
+            });
+       
+    </script>
+</body>
+</html>

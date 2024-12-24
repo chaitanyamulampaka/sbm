@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <link rel="stylesheet" href="{% static 'trail.css' %}">
+</head>
+<body>
+    <div class="gallerydiv">  
+        {% for n in pcardsdata %}
+        <div class="items">
+            <div class="pcarddiscount">{{ n.pcarddiscount }}</div>
+            <a href="{% url 'productViewer' n.product_id %}">
+                <img src="{{ n.pcardimg.url }}" alt="{{ n.pcardname }}">
+            </a>
+            <div class="stars" data-rating="{{ n.pcardrating }}"></div>
+            <div class="pcarddetails">
+                <h6>{{ n.pcardname }}</h6>
+                <p>
+                    <span style="font-size: 1.1rem;">&#x20B9;{{ n.pcardcost }}</span>
+                    <span>{{n.product_id}}</span>
+                    <span class="pcardoldprice" style="font-size: 0.9rem;">&#x20B9;{{ n.pcardoldprice }}</span>
+                </p>
+                
+                <a class="google-button flex items-center justify-center p-2 border border-gray-300 rounded-md shadow-sm hover:bg-gray-100 active:bg-gray-200 transition ease-in-out duration-300" 
+                href="{% url 'addtocart' n.product_id %}">Add to cart
+            </a>
+                
+
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const items = document.querySelectorAll('.items');
+
+        items.forEach(item => {
+            const starsContainer = item.querySelector('.stars');
+            const rating = parseInt(starsContainer.getAttribute('data-rating'));
+
+            for (let i = 0; i < 5; i++) {
+                const star = document.createElement('i');
+                star.classList.add('fas');
+                if (i < rating) {
+                    star.classList.add('fa-star');
+                    starsContainer.appendChild(star);
+                } else {
+                    starsContainer.appendChild(star);
+                }
+            }
+        });
+    });
+</script>
+</html>

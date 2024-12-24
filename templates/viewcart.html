@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+</head>
+<body>
+
+<h1>Your Cart</h1>
+{% load cart_extras %}
+
+{% if cart_items %}
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+                <tr>
+                    <a href="{% url 'productViewer' item.product.product_id %}">{{ item.product.pcardname }}<</a>
+                    <a href="{% url 'delete_from_cart' item.product.product_id %}">delete</a>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.product.pcardcost }}</td>
+                    <td>${{ item.quantity|multiply:item.product.pcardcost }}</td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p>Total Items: {{ cart_items.count }}</p>
+    <p>Toatal Bill:{{bill}}</p>
+   
+
+{% else %}
+    <p>Your cart is empty!</p>
+{% endif %}
+<a href="{%url 'checkout' %}" class="btn btn-primary">Buy now</a>
+</body>
+</html>

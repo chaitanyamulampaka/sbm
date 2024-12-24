@@ -1,0 +1,388 @@
+*{
+    font-family: 'Proxima Nova', sans-serif;
+}
+.wholepage{
+    
+    flex-wrap: wrap; 
+    display:flex;   
+    height:6000px;
+    width:100% ;
+
+}
+.sl{
+    width: 50%;
+    height: 16%;
+    background-color: #EBF5FB;
+    padding-top: 1%;
+
+    
+}
+.img1{
+    width: 100%;
+    height: 52%;
+    overflow: hidden;
+    border-radius: 3px;
+    padding-top: 3.5%;
+    padding-bottom: 3.5%;
+    
+}
+.img2{
+    width:100%;
+    height:40%;
+    overflow: hidden;
+    border-radius: 1%;
+  
+    padding-top:2.5%;
+    padding-bottom: 3.5%;
+}
+.im1:hover{
+    transform:scale(1.1);
+}
+
+
+.im1{
+    width: 80%;
+    margin-left: 10%;
+    transition:transform 1s ease;
+    height:100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+
+}
+
+
+.pic1{
+    width: 100%;
+    overflow: hidden;
+    height: 52%;
+    border-radius: 3px;
+
+    padding-top:3.5%;
+    padding-bottom: 3.5%;
+
+}
+.pic2{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 3px;
+    height:40%;
+
+    padding-top: 2.5%;
+    padding-bottom: 3.5%;
+    
+}
+.pc1{
+    width: 80%;
+    margin-left: 10%;
+    transition:transform 1s ease;   
+    height:100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    
+
+}
+.pc1:hover{
+    transform:scale(1.1);
+}
+.sr{
+    width: 50%;
+    height: 16%;
+    background-color: white;
+    padding-top: 1%;
+   
+}
+/* Add this CSS to your existing style.css or create a new one */
+
+/* For screens smaller than 576px (extra small devices) */
+@media (max-width: 575.98px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .st1, .st2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .supportdiv {
+        text-align: center;
+    }
+    .callus {
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+/* For screens larger than or equal to 576px (small devices) */
+@media (min-width: 576px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .st1, .st2 {
+        width: auto;
+        display: flex;
+    }
+    .supportdiv {
+        text-align: left;
+    }
+    .callus {
+        display: inline-block;
+        margin-top: 0;
+    }
+}
+
+
+
+
+.img1,
+.img2,.pic1,.pic2 {
+position: relative;
+}
+.img-text {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 80%;
+background-color: rgba(232, 211, 211, 0.7); 
+color: white;
+text-align: center;
+padding: 5px;
+margin-bottom: 2%;
+color:hsl(214, 32%, 87%);
+margin-left: 10%;
+opacity: 0;
+transition: opacity 1s ease, transform 1s ease; 
+}
+
+
+.im1:hover + .img-text,
+.img2:hover + .img-text,
+.pc1:hover + .img-text,
+.pc2:hover + .img-text  {
+opacity: 1; 
+transform: scale(110%);
+
+}
+
+
+
+
+.im1:not(:hover) + .img-text,
+.im2:not(:hover) + .img-text,
+.pc1:not(:hover) + .img-text,
+.pc2:not(:hover) + .img-text {
+opacity: 0; 
+transform: scale(1);
+}
+
+
+
+
+
+
+.text{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+
+}
+
+
+@media (max-width: 768px) {
+    .sl,
+    .sr {
+        width: 100%; /* Set width to 100% for both left and right sections */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .p1,
+    .p2,
+    .p3,
+    .p4,
+    .p5,
+    .p6,
+    .p7,
+    .p8,
+    .p9 {
+        display: flex; /* Change display to flex */
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center align images */
+    }
+
+    .img1,
+    .img2,
+    .pic1,
+    .pic2 {
+        width: 80%; /* Reduce image width to fit smaller screens */
+        height: auto; /* Allow height to adjust based on image width */
+        margin: 10px auto; /* Center images horizontally and add margin for spacing */
+        border-radius: 0; /* Remove border radius */
+    }
+
+    .textbox1 {
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .footerpanel {
+        flex-direction: column; /* Stack footer sections vertically */
+        align-items: flex-start; /* Align items to the start of the container */
+        padding-left: 0; /* Remove left padding to fit smaller screens */
+    }
+
+    .fblock1,
+    .ficonblock {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start of the container */
+        margin-left: 0; /* Remove left margin to fit smaller screens */
+    }
+
+    .ficon {
+        margin: 10px 0; /* Add margin between icons for better spacing */
+    }
+
+    .fbox {
+        margin-top: 5%; /* Adjust top margin for better spacing */
+        margin-left: 0; /* Remove left margin to fit smaller screens */
+    }
+}
+
+.carousel-inner img {
+    width: 100%; /* Ensure carousel images fill the entire width */
+    height: auto; /* Allow height to adjust based on image width */
+    object-fit: cover; /* Maintain aspect ratio and cover entire carousel area */
+}
+
+.carousel {
+    margin-bottom: 0; /* Remove bottom margin to prevent extra space */
+}
+
+
+
+
+
+
+.textbox1{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    height: 50px;
+    align-items: center;
+    background: linear-gradient(to right, #EBF5FB 50%, white 50%);
+    height: 130px;
+
+}
+.purelycrafted{
+    font-size: 1.5rem;
+    color:#9D877A ;
+    font-weight: 520;
+    margin-top: 1%;
+}
+.etikoppaka{
+    margin-top: 25px;
+    font-size: 1.2rem;
+    color: #484F56;
+}
+.direct{
+    margin-top: 10px;
+    font-weight: bold;
+    color: #484F56;
+}
+.footerpanel{
+    height:7%;
+    width:100%;
+    background: linear-gradient(to right, #EBF5FB 50%, #EBF5FB 50%);
+    display: flex;
+    color: #3D262A;
+    padding-left: 5%;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+#chaitanya{
+    font-weight: 700;
+}
+#etikoppaka{
+    font-weight: 700;
+}
+.faddress1{
+    margin-top: 25%;
+}
+.faddress2{
+    margin-top: 25%;
+    
+}
+
+.ficon{
+    height:2.2rem;
+    width: 2.2rem;
+    border-radius: 50%;
+    background-color: EBF5FB;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 1rem 1rem 1rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: background-color 0.3s ease-in;
+
+
+}
+.ficon:hover{
+    background-color: #9D877A;
+
+}
+.fblock1{
+    display: flex;
+
+}
+.ficonblock{
+    display: flex;
+    margin-left: 1.5rem;
+    
+
+}
+.fbox{
+    margin-top: 8%;
+    margin-left: 8%;
+    cursor: pointer;
+    color: #160000;
+}
+.fbox h3 {
+    color:#4D596A;
+}
+.fbox a {
+    transition: color 1s ease;
+    color:#160000;
+    font-weight:400;
+    transition: font-weight 0.1s ease;
+}
+.fbox a:hover {
+    font-weight:600;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Proxima Nova', sans-serif;
+}
+ 
+
+.carousel-inner {
+    width: 80%;
+    height: 70vh;
+  }
+  
+
+
+
+
+
+
+
+

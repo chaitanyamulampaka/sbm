@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+   ;
+  
+}
+.zdiv {
+    background-image: url("{% static 'toys collection/278250079_334820958635608_3283518940779512280_n.jpg' %}");
+    background-size: 95% 95%;
+     /* Ensure the background covers the entire page */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-position: center; /* Center the background image */
+}
+
+.fullpage{
+    height: 100vh;
+    width: 100%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(216, 229, 240, 0.325);
+}
+.zdiv img{
+    
+    background-size: cover;
+   
+
+}
+.zdiv{
+    width:70%;
+    height:80%;
+   
+   
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+   
+    box-shadow: 5px 5px 10px rgba(76, 74, 74, 0.393);
+
+}
+
+.part1 h1{
+    color: aliceblue;
+}
+.part1{
+
+    
+    height: 100%;
+    width: 50%;
+    border-top-left-radius: 30px;
+    backdrop-filter: blur(10px);
+    border-bottom-left-radius: 30px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+ 
+    
+    
+
+}
+
+.part1 hr{
+    width: 70%;
+    
+    margin-top: 20px;
+    
+}
+.part2{
+    
+    z-index: 1000;
+    height: 100%;
+    width: 50%;
+  
+    backdrop-filter: blur(px);
+   
+}
+#google_icon{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display:inline-block;
+    margin-right: 20px;
+ 
+
+}
+#fb_icon{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display:inline-block;
+    margin-right: 10px;
+ 
+
+}
+#id_password,#id_username{
+    color:white;
+    background: none;
+    height:40px;
+    outline: none;
+    width:280px;
+    border-radius: 25px;
+    border:2px solid white;
+    margin: 10px;
+    padding-left: 15px;
+    font-size: 1rem;
+    padding-right: 5px;
+    
+    
+}
+#id_password1, #id_password2,#id_first_name,#id_otp,#id_mobile{
+    color:white;
+    background: none;
+    height:40px;
+    outline: none;
+    width:280px;
+    border-radius: 25px;
+    border:2px solid white;
+    margin: 10px;
+    padding-left: 15px;
+    font-size: 1rem;
+    padding-right: 5px;
+    
+    
+}
+.part1 label{
+    display: none;
+}
+#id_username:focus,#id_password:focus,#id_password1:focus,#id_password2:focus{
+    border: 2px solid rgb(222, 190, 6);
+ 
+
+}
+.signin_btn{
+    background-color:white;
+    color:black;
+    height: 40px;
+    width: 300px;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    border: 3px solid white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+#id_username::placeholder,
+#id_password::placeholder {
+    color: rgba(255, 255, 255, 0.8); /* Change placeholder color here */
+
+}
+#login_label{
+    color:white;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+#id_username_helptext,#id_password2_helptext{
+    display: none;
+}
+.errorlist li{
+    color: brown;
+   
+
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 20px; /* Adjust as needed */
+}
+
+ul li {
+    display: none;
+    left: 0;
+    color: #3498db; /* Customize the color */
+    font-size: 1.2em; /* Customize the size */
+}
+ul li{
+    display: block;
+}
+
+

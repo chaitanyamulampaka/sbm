@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+{% load  static  %}
+<body>
+<link rel="stylesheet" href="{% static 'login.css' %}">
+<div class="fullpage" >
+  <div class="zdiv">
+     <style>
+      .zdiv {
+          background-image: url("{% static 'toys collection/278250079_334820958635608_3283518940779512280_n.jpg' %}");
+          background-size: 100% 100%;
+        
+           /* Ensure the background covers the entire page */
+          background-repeat: no-repeat; /* Prevent the background from repeating */
+          background-position: center; /* Center the background image */
+      }
+     
+  </style>
+    <div class="part1">
+      <h1 id="login_label">Sign in</h1>
+      <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{loginform.as_p}}
+        
+      
+        <input type="submit" value="login" class="signin_btn" >
+      </form>
+    </div>
+    <div class="part2">
+    </div>
+  </div>
+</div>
+</body>
+<script src="{% static 'login.js' %}"></script>
+</html>
+
+
+
+  

@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="navcontainer">
+      
+        <div class="navbar">
+            <div class="part1nav">
+                <ul>
+                    <li><a  class="hideonmob" href="#"  >HOME</a></span></li>
+                    <li><a class="hideonmob" href="#"  >SHOP</a></li>
+                    <li><a class="hideonmob" href="#" >SELL</a></li>
+                    <li><a class="hideonmob" href="#" >ARTISTS</a></li>
+                </ul>
+            </div>
+            <div class="part2nav">
+                <div class="bar hideonmob">
+                    <div class="searchicon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <input type="text" class="inputbox1" placeholder="type to search.." >
+                </div>
+               
+                <div class="account" >
+                    <span class="profile_toggle" onclick=showprofile()>
+                        {% if user.is_authenticated %}
+                            
+                            <h6 style="text-align: center;">{{u.username}}</h6>
+                        {% else %}
+                            <h6>Welcome, Guest!</h6>
+                            
+                        {% endif %}
+                    </span>
+                <div class='profiletabb'>
+                        {% if user.is_authenticated %}
+                            <h6 style="text-align: center;">{{u.fname}}</h6>
+                            <h6 style="text-align: center;">{{u.mobile}}</h6>
+                            <h6 style="text-align: center;">{{u.username}}</h6>
+                            <h6 style="text-align: center;">{{user.email}}</h6>
+                            <h6 style="text-align: center;">{{u.mobile}}</h6>
+                            <a href="{% url 'logout' %}" class="btn btn-primary">logout</a>
+                        {%else%}
+                        <a href="{% url 'login' %}" class="btn btn-primary">Sign In</a>
+                        {%endif%}
+
+                </div>
+
+                </div>
+                 <div class="bag hideonmob">
+                    <div class="bagicon"><i class="fa-solid fa-bag-shopping"><li><a href="{% url 'viewcart'  %}">BAG</a></li></i></div>
+                    <div class="bagnum">{% if cartitems %}{{ cartitems.count }}{%endif %}</div>
+                </div>
+                <div class="sidebaricon" onclick=shownavbar()><i class="fa-solid fa-bars"></i></div>
+            
+        </div>
+        <div class="responsenav">
+            <div class="quitr" onclick=hidenavbar()><i class="fa-solid fa-xmark"></i></div>
+            <div  id="part1nav">
+                <ul>
+                    <li><a href="#" >HOME</a></li>
+                    <li><a href="#">SEARCH  </a></li>
+                    <li><a href="#"  >SHOP</a></li>
+                    <li><a href="#" >SELL</a></li>
+                    <li><a href="#" >ARTISTS</a></li>
+                    <li><a href="{% url 'viewcart'  %}">BAG</a></li>
+                    <li><a href="#">ACCOUNT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+
+    
+
+<script>
+    function shownavbar(){
+    const navbarr=document.querySelector('.responsenav')
+    navbarr.style.display='flex'
+}
+function hidenavbar(){
+    const navbarr=document.querySelector('.responsenav')
+    navbarr.style.display='none' 
+}
+function showprofile(){
+    const profiletabb=document.querySelector('.profiletabb')
+    if (profiletabb.style.display==='none'){
+        profiletabb.style.display='block'
+    }
+    else{
+        profiletabb.style.display='none'
+    }
+}
+
+</script>
+</body>
+</html>
